@@ -53,6 +53,7 @@ public class Toymachine {
               else {
                   counter = res.get(item.getToyName()) + 1;
                   res.put(item.getToyName(), counter);
+                  counter = 0;
               }
           }
         return res;
