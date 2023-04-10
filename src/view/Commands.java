@@ -2,7 +2,8 @@ package view;
 
 public enum Commands {
 
-    ADD_TOYS,
+    ADD_TOY,
+    REMOVE_TOY,
     VIEW_TOYS,
     HELP,
     EXIT,

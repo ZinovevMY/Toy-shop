@@ -30,10 +30,6 @@ public class Toy {
         return toyWinning;
     }
 
-    public void setToyId(int toyId) {
-        this.toyId = toyId;
-    }
-
     public void setToyName(String toyName) {
         this.toyName = toyName;
     }
@@ -42,9 +38,6 @@ public class Toy {
         this.toyQuantity = toyQuantity;
     }
 
-    public void setToyWinning(int toyWinning) {
-        this.toyWinning = toyWinning;
-    }
 
     @Override
     public String toString() {
