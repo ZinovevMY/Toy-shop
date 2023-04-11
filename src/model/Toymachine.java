@@ -8,10 +8,12 @@ public class Toymachine {
     private static final int TOYS_COUNT = 100;
     private int toysCount;
     private List<Toy> toys;
+    private int lastToyID;
 
     public Toymachine() {
         this.toysCount = 0;
         this.toys = new ArrayList<Toy>();
+        this.lastToyID = 0;
     }
 
 
@@ -23,6 +25,7 @@ public class Toymachine {
         if (toysCount <= TOYS_COUNT){
             toysCount++;
             toys.add(toy);
+            lastToyID++;
         }else{
             System.out.println("Автомат полон игрушек!");
         }
@@ -57,6 +60,10 @@ public class Toymachine {
               }
           }
         return res;
+    }
+
+    public int getLastToyID() {
+        return lastToyID;
     }
 
     @Override

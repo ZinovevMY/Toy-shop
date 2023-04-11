@@ -37,7 +37,7 @@ public class UserInterface {
                         System.out.println("WIN_TOY");
                         break;
                     case HELP:
-                        System.out.println("HELP");
+                        printHelp();
                 }
 
             }catch (Exception e){
@@ -50,6 +50,12 @@ public class UserInterface {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
         return in.nextLine();
+    }
+
+    private void printHelp(){
+        for (Commands com: Commands.values()){
+            System.out.println(com.getTitle());
+        }
     }
 
 }
