@@ -13,7 +13,7 @@ public class Toymachine {
     public Toymachine() {
         this.toysCount = 0;
         this.toys = new ArrayList<Toy>();
-        this.lastToyID = 0;
+        this.lastToyID = 1;
     }
 
 

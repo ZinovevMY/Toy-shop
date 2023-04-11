@@ -5,7 +5,7 @@ import java.util.List;
 public class Toymapper {
 
     public String saveMapToy(Toy toy){
-        return String.format("%d;%s;%d;%d", toy.getToyId(), toy.getToyName(), toy.getToyQuantity(), toy.getToyWinning());
+        return String.format("%d;%s;%d;%d", toy.getToyId(), toy.getToyName(), toy.getToysCount(), toy.getToyWinning());
     }
 
     public Toy loadMapToy(String toy){

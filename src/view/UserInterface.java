@@ -58,4 +58,20 @@ public class UserInterface {
         }
     }
 
+    private String getToyName(){
+        return prompt("Введите наименование игрушки: ");
+    }
+
+    private int getToysCount(){
+        String count = prompt("Введите количество игрушек: ");
+        int result = 0;
+        try{
+             result = Integer.parseInt(count);
+        }
+        catch (Exception e){
+            System.out.println("Вы ввели не число!");
+        }
+        return result;
+    }
+
 }

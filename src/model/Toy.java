@@ -4,13 +4,13 @@ public class Toy {
 
     private int toyId;
     private String toyName;
-    private int toyQuantity;
+    private int toysCount;
     private int toyWinning;
 
-    public Toy(int toyId, String toyName, int toyQuantity, int toyWinning){
+    public Toy(int toyId, String toyName, int toysCount, int toyWinning){
         this.toyId = toyId;
         this.toyName = toyName;
-        this.toyQuantity = toyQuantity;
+        this.toysCount = toysCount;
         this.toyWinning = toyWinning;
     }
 
@@ -22,21 +22,19 @@ public class Toy {
         return toyName;
     }
 
-    public int getToyQuantity() {
-        return toyQuantity;
-    }
 
     public int getToyWinning() {
         return toyWinning;
+    }
+
+    public int getToysCount() {
+        return toysCount;
     }
 
     public void setToyName(String toyName) {
         this.toyName = toyName;
     }
 
-    public void setToyQuantity(int toyQuantity) {
-        this.toyQuantity = toyQuantity;
-    }
 
 
     @Override
@@ -44,7 +42,6 @@ public class Toy {
         return "Toy{" +
                 "toyId=" + toyId +
                 ", toyName='" + toyName + '\'' +
-                ", toyQuantity=" + toyQuantity +
                 ", toyWinning=" + toyWinning +
                 '}';
     }
