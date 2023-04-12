@@ -9,11 +9,13 @@ public class Toymachine {
     private int toysCount;
     private List<Toy> toys;
     private int lastToyID;
+    private int maxToyWinning;
 
     public Toymachine() {
         this.toysCount = 0;
         this.toys = new ArrayList<Toy>();
         this.lastToyID = 1;
+        this.maxToyWinning = 0;
     }
 
 
@@ -22,7 +24,7 @@ public class Toymachine {
     }
 
     public void addToy(Toy toy) {
-        if (toysCount <= TOYS_COUNT){
+        if (toysCount < TOYS_COUNT){
             toysCount++;
             toys.add(toy);
             lastToyID++;
@@ -60,6 +62,14 @@ public class Toymachine {
               }
           }
         return res;
+    }
+
+    public void setMaxToyWinning(List<Toy> toys) {
+        for (Toy toy: toys){
+            if (toy.getToyWinning() > maxToyWinning){
+                this.maxToyWinning = toy.getToyWinning();
+            }
+        }
     }
 
     public int getLastToyID() {
