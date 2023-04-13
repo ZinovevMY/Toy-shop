@@ -57,4 +57,16 @@ public class FileOperationsImpl implements FileOperations{
         return allToys;
     }
 
+    @Override
+    public void removeToys() {
+        File file = new File(fileName);
+        try {
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

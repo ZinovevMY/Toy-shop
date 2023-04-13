@@ -17,7 +17,7 @@ public class UserInterface {
         System.out.println("_______________");
         System.out.println("Автомат игрушек");
         System.out.println("---------------");
-        System.out.println("Доступные команды: ADD_TOY, REMOVE_TOY," +
+        System.out.println("Доступные команды: ADD_TOY, REMOVE_TOYS," +
                            "VIEW_TOYS, HELP, WIN_TOY, EXIT");
         System.out.println("Для справки введите HELP!");
     }
@@ -36,7 +36,7 @@ public class UserInterface {
                     case ADD_TOY:
                         addToy();
                         break;
-                    case REMOVE_TOY:
+                    case REMOVE_TOYS:
                         System.out.println("REMOVE_TOY");
                         break;
                     case VIEW_TOYS:
@@ -59,6 +59,10 @@ public class UserInterface {
         String toyName = prompt("Введите название игрушки: ");
         int toysCount = Integer.parseInt(prompt("Введите количество игрушек: "));
         userController.addToy(toyName, toysCount);
+    }
+
+    public void removeToys(){
+        userController.removeToys();
     }
 
     private String prompt(String message) {

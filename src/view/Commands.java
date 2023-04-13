@@ -3,7 +3,7 @@ package view;
 public enum Commands {
 
     ADD_TOY ("ADD_TOY - Команда добавления игрушек в автомат"),
-    REMOVE_TOY("REMOVE_TOY - Команда удаления угрушев из автомата"),
+    REMOVE_TOYS("REMOVE_TOYS - Команда удаления всех игрушек из автомата"),
     VIEW_TOYS ("VIEW_TOYS - Команда просмотра игрушек в автомате"),
     HELP ("HELP - Инструкция по эксплуатации автомата :)"),
     WIN_TOY ("WIN_TOY - Выиграть игрушку в автомате"),

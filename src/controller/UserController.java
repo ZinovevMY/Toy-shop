@@ -16,4 +16,8 @@ public class UserController {
     public void addToy(String name, int toysCount){
         this.machineInterface.addToy(name, toysCount);
     }
+
+    public void removeToys(){
+        machineInterface.removeToys();
+    }
 }

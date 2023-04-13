@@ -44,8 +44,8 @@ public class MachineInterfaceImpl implements MachineInterface{
     }
 
     @Override
-    public void deleteToy(String toyName, int toysCount, int toyWeight) {
-
+    public void removeToys() {
+        fileOperations.removeToys();
     }
 
     private int getToyWinning(){
