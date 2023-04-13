@@ -76,6 +76,10 @@ public class Toymachine {
         return lastToyID;
     }
 
+    public List<Toy> getToys() {
+        return toys;
+    }
+
     @Override
     public String toString() {
         return super.toString();

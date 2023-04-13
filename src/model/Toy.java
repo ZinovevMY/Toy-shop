@@ -14,6 +14,13 @@ public class Toy {
         this.toyWinning = toyWinning;
     }
 
+    public Toy(String toyName, int toysCount){
+        this.toyId = 0;
+        this.toyName = toyName;
+        this.toysCount = toysCount;
+        this.toyWinning = 0;
+    }
+
     public int getToyId() {
         return toyId;
     }

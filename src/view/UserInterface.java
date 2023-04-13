@@ -1,8 +1,17 @@
 package view;
 
+import controller.UserController;
+import model.Toy;
+
 import java.util.Scanner;
 
 public class UserInterface {
+
+    private UserController userController;
+
+    public UserInterface(UserController userController){
+        this.userController = userController;
+    }
 
     public void startMenu(){
         System.out.println("_______________");
@@ -25,7 +34,7 @@ public class UserInterface {
                 }
                 switch (com){
                     case ADD_TOY:
-                        System.out.println("ADD_TOYS");
+                        addToy();
                         break;
                     case REMOVE_TOY:
                         System.out.println("REMOVE_TOY");
@@ -44,6 +53,12 @@ public class UserInterface {
                 System.out.println(e.getStackTrace());
             }
         }
+    }
+
+    public void addToy(){
+        String toyName = prompt("Введите название игрушки: ");
+        int toysCount = Integer.parseInt(prompt("Введите количество игрушек: "));
+        userController.addToy(toyName, toysCount);
     }
 
     private String prompt(String message) {

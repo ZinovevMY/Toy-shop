@@ -10,13 +10,21 @@ public class MachineInterfaceImpl implements MachineInterface{
     private Toymapper toyMapper = new Toymapper();
     private FileOperations fileOperations;
 
+    public MachineInterfaceImpl(FileOperations fileOperations){
+        this.fileOperations = fileOperations;
+    }
+
     @Override
-    public void addToy(String toyName, int toysCount, int toyWinning) {
+    public void addToy(String toyName, int toysCount) {
         if (toysCount > 0){
             for (int i = 0; i < toysCount; i++){
                 toymachine.addToy(new Toy(toymachine.getLastToyID(), toyName, 1, getToyWinning()));
             }
-
+            List<String> allToys = new ArrayList<>();
+            for (Toy item: toymachine.getToys()){
+                allToys.add(toyMapper.saveMapToy(item));
+            }
+            fileOperations.putAllToys(allToys);
         }
     }
 
