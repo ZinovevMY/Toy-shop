@@ -37,7 +37,7 @@ public class UserInterface {
                         addToy();
                         break;
                     case REMOVE_TOYS:
-                        System.out.println("REMOVE_TOY");
+                        removeToys();
                         break;
                     case VIEW_TOYS:
                         System.out.println("VIEW_TOYS");
