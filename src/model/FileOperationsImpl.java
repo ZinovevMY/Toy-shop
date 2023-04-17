@@ -20,7 +20,7 @@ public class FileOperationsImpl implements FileOperations{
 
     @Override
     public void putAllToys(List<String> toys) {
-        try (FileWriter csvWriter = new FileWriter(fileName, true)){
+        try (FileWriter csvWriter = new FileWriter(fileName, false)){
             for (String toy: toys){
                 csvWriter.write(toy);
                 csvWriter.append("\n");

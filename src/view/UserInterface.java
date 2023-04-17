@@ -40,10 +40,10 @@ public class UserInterface {
                         removeToys();
                         break;
                     case VIEW_TOYS:
-                        System.out.println("VIEW_TOYS");
+                        viewToys();
                         break;
                     case WIN_TOY:
-                        System.out.println("WIN_TOY");
+                        winToy();
                         break;
                     case HELP:
                         printHelp();
@@ -65,6 +65,14 @@ public class UserInterface {
         userController.removeToys();
     }
 
+    public void viewToys(){
+        userController.viewToys();
+    }
+
+    public void winToy(){
+        userController.winToy();
+    }
+
     private String prompt(String message) {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
@@ -75,22 +83,6 @@ public class UserInterface {
         for (Commands com: Commands.values()){
             System.out.println(com.getTitle());
         }
-    }
-
-    private String getToyName(){
-        return prompt("Введите наименование игрушки: ");
-    }
-
-    private int getToysCount(){
-        String count = prompt("Введите количество игрушек: ");
-        int result = 0;
-        try{
-             result = Integer.parseInt(count);
-        }
-        catch (Exception e){
-            System.out.println("Вы ввели не число!");
-        }
-        return result;
     }
 
 }

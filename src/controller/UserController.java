@@ -20,4 +20,12 @@ public class UserController {
     public void removeToys(){
         machineInterface.removeToys();
     }
+
+    public void viewToys(){
+        machineInterface.viewToys();
+    }
+
+    public void winToy(){
+        machineInterface.winToy();
+    }
 }

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class MachineInterfaceImpl implements MachineInterface{
@@ -40,7 +41,27 @@ public class MachineInterfaceImpl implements MachineInterface{
 
     @Override
     public void winToy() {
-
+        List<Toy> toys = getAllToys();
+        List<String> allToys = new ArrayList<>();
+        int maxWin = 0;
+        int toyId = 0;
+        if (!toys.isEmpty()){
+            for (Toy item: toys){
+                if (item.getToyWinning() > maxWin){
+                    maxWin = item.getToyWinning();
+                    toyId = item.getToyId();
+                }
+            }
+            for (Toy item: toys){
+                if (toyId == item.getToyId()){
+                    System.out.println("Поздравляем! Вы выиграли " + item.getToyName() + "!");
+                }
+                else {
+                    allToys.add(toyMapper.saveMapToy(item));
+                }
+            }
+            fileOperations.putAllToys(allToys);
+        }
     }
 
     @Override
@@ -53,5 +74,21 @@ public class MachineInterfaceImpl implements MachineInterface{
         int max = 100;
         max -= min;
         return (int) (Math.random() * ++max) + min;
+    }
+
+    @Override
+    public void viewToys() {
+        List<Toy> allToys = getAllToys();
+        Map<String, Integer> toys = toymachine.toysCalculate(allToys);
+        if (!toys.isEmpty()){
+            System.out.println("В автомате лежат:");
+            for (Map.Entry<String, Integer> entry: toys.entrySet()){
+                System.out.println(entry.getKey() + " - " + entry.getValue() + " шт.");
+            }
+
+        }
+        else {
+            System.out.println("Автомат пуст!");
+        }
     }
 }

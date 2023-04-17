@@ -13,7 +13,7 @@ public class Toymachine {
 
     public Toymachine() {
         this.toysCount = 0;
-        this.toys = new ArrayList<Toy>();
+        this.toys = new ArrayList<>();
         this.lastToyID = 1;
         this.maxToyWinning = 0;
     }
@@ -48,7 +48,7 @@ public class Toymachine {
         }
     }
 
-    private Map toysCalculate(List<Toy> toys){
+    public Map toysCalculate(List<Toy> toys){
           Map<String, Integer> res = new HashMap<>();
           int counter = 0;
           for (Toy item: toys){

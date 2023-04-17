@@ -7,4 +7,6 @@ public interface MachineInterface {
     List<Toy> getAllToys();
     public void winToy();
     public void removeToys();
+    public void viewToys();
+
 }
